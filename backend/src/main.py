@@ -6,7 +6,7 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(__file__)))
 from flask import Flask, send_from_directory, request, jsonify
 from flask_cors import CORS
 from flask_jwt_extended import JWTManager
-from datetime import timedelta
+from datetime import timedelta, datetime
 
 # Import all models
 from src.models.user import db, User, Department, Employee, Customer
@@ -72,21 +72,26 @@ with app.app_context():
     if not admin_user:
         admin_user = User(
             email='admin@company.com',
+            first_name='Admin',
+            last_name='User',
             role='admin',
             is_active=True
         )
         admin_user.set_password('admin123')
         db.session.add(admin_user)
-        db.session.flush()  # Flush to get the user ID
         
         # Create admin employee record
         admin_employee = Employee(
-            user_id=admin_user.id,
-            employee_number='EMP001',
-            full_name='System Administrator',
-            job_position='Administrator',
-            employment_status='active',
-            hire_date=datetime.utcnow().date()
+            employee_id='EMP001',
+            first_name='Admin',
+            last_name='User',
+            email='admin@company.com',
+            phone='+966500000000',
+            department='Administration',
+            position='System Administrator',
+            salary=10000.00,
+            hire_date=datetime.utcnow().date(),
+            is_active=True
         )
         db.session.add(admin_employee)
         
