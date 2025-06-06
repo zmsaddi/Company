@@ -1,256 +1,230 @@
-# 🏢 نظام إدارة الشركة الشامل
+# 🏢 Company Management System
 
-## 📋 نظرة عامة
+A comprehensive company management system built with Flask (Backend) and modern web technologies.
 
-نظام إدارة شركة متكامل مبني بتقنيات حديثة يوفر حلولاً شاملة لإدارة جميع جوانب الشركة من الموظفين والعملاء إلى المبيعات والمخزون.
+## 🚀 Live Demo
 
-## 🌟 المميزات الرئيسية
+- **Backend API:** https://company-production-613d.up.railway.app/
+- **Status:** ✅ Live and Running
+- **Database:** MySQL on Railway
 
-### 👥 إدارة الموارد البشرية
-- إدارة الموظفين والأقسام
-- نظام الرواتب والمكافآت
-- تتبع الحضور والغياب
-- إدارة الإجازات والطلبات
+## 📋 Project Overview
 
-### 💼 إدارة المبيعات
-- إدارة العملاء والعلاقات
-- نظام الطلبات والفواتير
-- تتبع المبيعات والأرباح
-- إدارة فرق المبيعات
+This system provides complete company management functionality including:
 
-### 📦 إدارة المخزون
-- تتبع المنتجات والكميات
-- إدارة المخازن المتعددة
-- تنبيهات نفاد المخزون
-- تقارير الحركة والجرد
+- 👥 **User Management** - Authentication, roles, and permissions
+- 👨‍💼 **Employee Management** - Employee records, profiles, and data
+- 🏢 **Department Management** - Organizational structure
+- 📊 **Reports & Analytics** - Business insights and data visualization
+- 🔐 **Security** - JWT authentication and role-based access control
 
-### 💰 إدارة المالية
-- إدارة الحسابات والمصروفات
-- تقارير مالية مفصلة
-- تتبع الأرباح والخسائر
-- إدارة الميزانيات
-
-### 📊 التقارير والتحليلات
-- لوحة تحكم ذكية
-- تقارير في الوقت الفعلي
-- رسوم بيانية تفاعلية
-- تحليلات متقدمة
-
-## 🛠️ التقنيات المستخدمة
+## 🛠️ Technology Stack
 
 ### Backend
-- **Python 3.11** - لغة البرمجة الأساسية
-- **Flask** - إطار عمل الويب
-- **MySQL** - قاعدة البيانات
-- **JWT** - نظام المصادقة
-- **SQLAlchemy** - ORM لقاعدة البيانات
+- **Framework:** Flask (Python)
+- **Database:** MySQL
+- **ORM:** SQLAlchemy
+- **Authentication:** JWT (JSON Web Tokens)
+- **Deployment:** Railway
+- **API:** RESTful API design
 
-### Frontend
-- **React 18** - مكتبة واجهة المستخدم
-- **Vite** - أداة البناء والتطوير
-- **CSS3** - التصميم والتنسيق
-- **JavaScript ES6+** - لغة البرمجة
+### Frontend (Coming Soon)
+- **Framework:** React.js
+- **Styling:** Modern CSS/Tailwind
+- **State Management:** Context API/Redux
+- **Deployment:** Vercel/Netlify
 
-### قاعدة البيانات
-- **MySQL 8.0** - قاعدة بيانات علائقية
-- **13 جدول** متكامل
-- **فهرسة محسنة** للأداء
-- **علاقات محكمة** بين الجداول
+## 📁 Project Structure
 
-## 🔐 الأمان والحماية
+```
+Company/
+├── backend/                 # Flask Backend
+│   ├── src/
+│   │   ├── models/         # Database models
+│   │   ├── routes/         # API endpoints
+│   │   ├── utils/          # Utility functions
+│   │   └── main.py         # Application entry point
+│   ├── requirements.txt    # Python dependencies
+│   ├── Procfile           # Railway deployment config
+│   └── wsgi.py            # WSGI entry point
+├── frontend/              # React Frontend (Coming Soon)
+└── docs/                  # Documentation
+```
 
-### نظام المصادقة
-- مصادقة ثنائية العوامل (2FA)
-- تشفير كلمات المرور
-- انتهاء صلاحية الجلسات
-- حماية من هجمات CSRF
+## 🔗 API Endpoints
 
-### صلاحيات الوصول
-- 9 أدوار مختلفة
-- صلاحيات مفصلة
-- تحكم دقيق في الوصول
-- سجل تدقيق شامل
+### Authentication
+- `POST /api/auth/login` - User login
+- `POST /api/auth/logout` - User logout
+- `POST /api/auth/refresh` - Refresh JWT token
 
-## 👤 الأدوار والصلاحيات
+### User Management
+- `GET /api/users` - Get all users
+- `POST /api/users` - Create new user
+- `GET /api/users/<id>` - Get specific user
+- `PUT /api/users/<id>` - Update user
+- `DELETE /api/users/<id>` - Delete user
 
-### 🔑 المدير العام
-- وصول كامل لجميع الوحدات
-- إدارة المستخدمين والصلاحيات
-- عرض جميع التقارير
-- إعدادات النظام
+### Employee Management
+- `GET /api/employees` - Get all employees
+- `POST /api/employees` - Create new employee
+- `GET /api/employees/<id>` - Get specific employee
+- `PUT /api/employees/<id>` - Update employee
+- `DELETE /api/employees/<id>` - Delete employee
 
-### 👥 مدير الموارد البشرية
-- إدارة الموظفين والأقسام
-- نظام الرواتب والمكافآت
-- تقارير الموارد البشرية
-- إدارة الحضور والغياب
+### Department Management
+- `GET /api/departments` - Get all departments
+- `POST /api/departments` - Create new department
+- `GET /api/departments/<id>` - Get specific department
+- `PUT /api/departments/<id>` - Update department
+- `DELETE /api/departments/<id>` - Delete department
 
-### 💼 مدير المبيعات
-- إدارة العملاء والطلبات
-- تتبع المبيعات والأهداف
-- إدارة فرق المبيعات
-- تقارير المبيعات
+### Reports & Analytics
+- `GET /api/reports/dashboard` - Dashboard data
+- `GET /api/reports/employees` - Employee reports
+- `GET /api/reports/departments` - Department reports
 
-### 💰 مدير المالية
-- إدارة الحسابات والمصروفات
-- التقارير المالية
-- إدارة الميزانيات
-- تحليل الأرباح والخسائر
+## 🔐 User Roles & Permissions
 
-### 🚚 مدير اللوجستيات
-- إدارة الشحن والتوصيل
-- تتبع الطلبات
-- إدارة المخازن
-- تحسين سلسلة التوريد
+- **admin** - Full system access
+- **hr_manager** - HR operations and employee management
+- **sales_manager** - Sales operations and team management
+- **finance_manager** - Financial operations and reporting
+- **logistics_manager** - Logistics and supply chain management
+- **warehouse_manager** - Inventory and warehouse operations
+- **sales_rep** - Sales activities and customer management
+- **employee** - Basic employee access
+- **customer_support** - Customer service operations
 
-### 📦 مدير المخزن
-- إدارة المنتجات والمخزون
-- تتبع الحركة والجرد
-- تنبيهات المخزون
-- تقارير المخزون
+## 🚀 Getting Started
 
-### 🎯 مندوب المبيعات
-- إدارة العملاء الشخصيين
-- إنشاء الطلبات
-- تتبع المبيعات الشخصية
-- تقارير الأداء
-
-### 👤 الموظف
-- عرض البيانات الشخصية
-- تتبع الراتب والمكافآت
-- طلب الإجازات
-- عرض الإشعارات
-
-### 🎧 دعم العملاء
-- إدارة الاستفسارات
-- حل الشكاوى
-- تتبع التذاكر
-- تقارير الدعم
-
-## 🚀 التثبيت والتشغيل
-
-### متطلبات النظام
-- Python 3.11+
-- Node.js 18+
-- MySQL 8.0+
+### Prerequisites
+- Python 3.8+
+- MySQL database
 - Git
 
-### Backend
-```bash
-cd backend
-pip install -r requirements.txt
-python main.py
-```
+### Backend Setup
 
-### Frontend
-```bash
-cd frontend
-npm install
-npm run dev
-```
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/zmsaddi/Company.git
+   cd Company/backend
+   ```
 
-## 🌐 النشر
+2. **Install dependencies**
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-### Backend (Railway/Heroku)
-```bash
-# إعداد متغيرات البيئة
-DATABASE_URL=mysql://user:pass@host/db
-JWT_SECRET_KEY=your-secret-key
-SECRET_KEY=your-flask-secret
-FLASK_ENV=production
-```
+3. **Environment Variables**
+   Create a `.env` file with:
+   ```env
+   DATABASE_URL=mysql+pymysql://username:password@host:port/database
+   SECRET_KEY=your-secret-key
+   JWT_SECRET_KEY=your-jwt-secret-key
+   FLASK_ENV=development
+   ```
 
-### Frontend (Vercel/Netlify)
-```bash
-# إعداد متغيرات البيئة
-VITE_API_URL=https://your-backend-url
-VITE_APP_NAME=نظام إدارة الشركة
-```
+4. **Run the application**
+   ```bash
+   python src/main.py
+   ```
 
-## 📊 قاعدة البيانات
+### Frontend Setup (Coming Soon)
+Frontend development is in progress. Will be available soon with React.js.
 
-### الجداول الرئيسية
-- **users** - المستخدمين والصلاحيات
-- **employees** - بيانات الموظفين
-- **departments** - الأقسام والإدارات
-- **customers** - العملاء والعلاقات
-- **products** - المنتجات والخدمات
-- **orders** - الطلبات والمبيعات
-- **inventory** - المخزون والحركة
-- **payroll** - الرواتب والمكافآت
-- **expenses** - المصروفات والتكاليف
-- **notifications** - الإشعارات والتنبيهات
-- **audit_log** - سجل التدقيق
-- **bonuses** - المكافآت والحوافز
-- **invoices** - الفواتير والمدفوعات
+## 📊 Database Schema
 
-## 🔑 بيانات تجريبية
+### Core Tables
+- **users** - User authentication and basic info
+- **employees** - Employee detailed information
+- **departments** - Company departments and structure
+- **attendance** - Employee attendance tracking
+- **payroll** - Salary and payment information
+- **performance_reviews** - Employee performance data
+- **training_programs** - Training and development
+- **inventory** - Product and asset management
+- **sales** - Sales transactions and data
+- **customers** - Customer information
 
-### المدير العام
-```
-البريد: admin@company.com
-كلمة المرور: admin123
-```
+## 🔧 Development
 
-### مدير الموارد البشرية
-```
-البريد: hr@company.com
-كلمة المرور: admin123
-```
+### Backend Development
+The backend is built with Flask and follows RESTful API principles:
 
-### مدير المبيعات
-```
-البريد: sales@company.com
-كلمة المرور: admin123
-```
+- **Models:** SQLAlchemy ORM for database operations
+- **Routes:** Organized by functionality (auth, users, employees, etc.)
+- **Security:** JWT authentication with role-based access control
+- **Validation:** Input validation and error handling
+- **Documentation:** API documentation available
 
-## 📱 التصميم المتجاوب
+### API Testing
+Use the built-in API test interface at the root URL or tools like Postman:
+- Base URL: `https://company-production-613d.up.railway.app/`
+- Authentication: Bearer token required for protected endpoints
 
-- دعم كامل للأجهزة المحمولة
-- تصميم متكيف مع جميع الشاشات
-- واجهة عربية مع دعم RTL
-- تجربة مستخدم محسنة
+## 🚀 Deployment
 
-## 🌍 التدويل
+### Backend (Railway)
+The backend is deployed on Railway with:
+- Automatic deployments from GitHub
+- MySQL database integration
+- Environment variables management
+- SSL/HTTPS enabled
 
-- دعم كامل للغة العربية
-- تنسيق التواريخ والأرقام العربية
-- إمكانية إضافة لغات أخرى
-- واجهة RTL متكاملة
+### Frontend (Coming Soon)
+Frontend will be deployed on Vercel/Netlify with:
+- Automatic deployments from GitHub
+- Environment variables for API endpoints
+- CDN and performance optimization
 
-## 📈 الأداء والتحسين
+## 📈 Features
 
-- تحميل سريع للصفحات
-- استعلامات محسنة لقاعدة البيانات
-- ذاكرة تخزين مؤقت ذكية
-- ضغط الملفات والصور
+### Current Features (Backend)
+- ✅ User authentication and authorization
+- ✅ Employee management system
+- ✅ Department management
+- ✅ RESTful API design
+- ✅ Database integration
+- ✅ Security implementation
+- ✅ Error handling and validation
 
-## 🔧 الصيانة والدعم
+### Upcoming Features (Frontend)
+- 🔄 Modern React.js interface
+- 🔄 Responsive design for all devices
+- 🔄 Dashboard and analytics
+- 🔄 Real-time notifications
+- 🔄 Advanced reporting
+- 🔄 Mobile-friendly design
 
-- سجل أخطاء شامل
-- نظام نسخ احتياطي
-- مراقبة الأداء
-- تحديثات أمنية دورية
+## 🤝 Contributing
 
-## 📞 الدعم الفني
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-للحصول على الدعم الفني أو الاستفسارات:
-- البريد الإلكتروني: support@company.com
-- الهاتف: +966-XX-XXX-XXXX
+## 📝 License
 
-## 📄 الترخيص
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-هذا المشروع مرخص تحت رخصة MIT - راجع ملف [LICENSE](LICENSE) للتفاصيل.
+## 📞 Contact
 
-## 🤝 المساهمة
+- **Developer:** zmsaddi
+- **GitHub:** https://github.com/zmsaddi
+- **Repository:** https://github.com/zmsaddi/Company
 
-نرحب بالمساهمات! يرجى قراءة [دليل المساهمة](CONTRIBUTING.md) للتفاصيل.
+## 🙏 Acknowledgments
 
-## 📝 سجل التغييرات
-
-راجع [CHANGELOG.md](CHANGELOG.md) لمعرفة التحديثات والتغييرات.
+- Flask community for the excellent framework
+- Railway for reliable hosting
+- MySQL for robust database solution
+- All contributors and supporters
 
 ---
 
-**تم تطوير هذا النظام بواسطة فريق متخصص لتوفير حل شامل ومتكامل لإدارة الشركات.**
+**🎉 Company Management System - Building the future of business management!**
+
+*Last updated: June 6, 2025*
 
